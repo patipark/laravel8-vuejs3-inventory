@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/clear-cache', function() {
+    $configCache = Artisan::call('config:cache');
+    $clearCache = Artisan::call('cache:clear');
+    return [
+        'message' => 'Clear cache success!',
+        'configCache' => $configCache,
+        'clearCache' => $clearCache
+    ];
 });
 
 Route::resource('products', ProductController::class);
