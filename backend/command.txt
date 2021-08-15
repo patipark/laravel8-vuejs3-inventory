@@ -33,3 +33,19 @@ Schema::create('products', function (Blueprint $table) {
 แล้วทำการ migration ดู php artisan migrate ดูจะเกิดตาราง products ขึ้นในฐานข้อมูลตามโครงสร้างที่กำหนดไว้ใน migration ไฟล์
 
 #ทำการแก้ไข ProductController ให้ทำงานตามหน้าที่ต่างๆของแต่ละ method
+
+#เปิด postman ขึ้นมาเรียก api ตาม url ต่างๆของ method เพื่อแสดง เพิ่มข้อมูล แก้ไขข้อมูล และลบข้อมูล
+#โดย base url = http://127.0.0.1:8000/api
+#เริ่มจาก เรียก method product/index ==> http://127.0.0.1:8000/api/products
+และ route อื่นๆ ตามตาราง route ด่านล่าง ซึ่งได้จากคำสั่ง php artisan route:list --name=products
++--------+-----------+-----------------------------+------------------+------------------------------------------------+------------+
+| Domain | Method    | URI                         | Name             | Action                                         | Middleware |
++--------+-----------+-----------------------------+------------------+------------------------------------------------+------------+
+|        | GET|HEAD  | api/products                | products.index   | App\Http\Controllers\ProductController@index   | api        |
+|        | POST      | api/products                | products.store   | App\Http\Controllers\ProductController@store   | api        |
+|        | GET|HEAD  | api/products/create         | products.create  | App\Http\Controllers\ProductController@create  | api        |
+|        | GET|HEAD  | api/products/{product}      | products.show    | App\Http\Controllers\ProductController@show    | api        |
+|        | PUT|PATCH | api/products/{product}      | products.update  | App\Http\Controllers\ProductController@update  | api        |
+|        | DELETE    | api/products/{product}      | products.destroy | App\Http\Controllers\ProductController@destroy | api        |
+|        | GET|HEAD  | api/products/{product}/edit | products.edit    | App\Http\Controllers\ProductController@edit    | api        |
++--------+-----------+-----------------------------+------------------+------------------------------------------------+------------+
