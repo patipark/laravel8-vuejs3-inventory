@@ -9,3 +9,6 @@ php artisan route:list --path=api
 
 #คำสั่ง ตรวจสอบ route ทั้งหมดที่มี path api และ method post
 php artisan route:list --path=api --method=post
+
+#ทำการ migration ด้วยคำสั่ง php artisan migrate
+
