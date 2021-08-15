@@ -1,2 +1,11 @@
 #สร้าง project laravel ด้วยคำสั่ง
 composer create-project  laravel/laravel backend --prefer-dist
+
+#คำสั่ง ตรวจสอบ route ทั้งหมด
+php artisan route:list
+
+#คำสั่ง ตรวจสอบ route ทั้งหมดที่มี path api
+php artisan route:list --path=api
+
+#คำสั่ง ตรวจสอบ route ทั้งหมดที่มี path api และ method post
+php artisan route:list --path=api --method=post
