@@ -63,3 +63,7 @@ Schema::create('products', function (Blueprint $table) {
 #การติดตั้ง larvel/sanctum ด้วยคำสั่ง composer require laravel/sanctum
 #เสร็จแล้วให้ทำการ Publish the Sanctum configuration and migration files
  ด้วยการเรียกคำสั่ง php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+#จะเกิดไฟล์ config\sanctum.php และไฟล์ database\migrations\2019_12_14_000001_create_personal_access_tokens_table.php
+ซึ่งเป็นการสร้าง personal
+
