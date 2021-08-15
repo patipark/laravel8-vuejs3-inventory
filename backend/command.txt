@@ -49,3 +49,6 @@ Schema::create('products', function (Blueprint $table) {
 |        | DELETE    | api/products/{product}      | products.destroy | App\Http\Controllers\ProductController@destroy | api        |
 |        | GET|HEAD  | api/products/{product}/edit | products.edit    | App\Http\Controllers\ProductController@edit    | api        |
 +--------+-----------+-----------------------------+------------------+------------------------------------------------+------------+
+
+# เกิด error ไม่สามารถแก้ไขฟิวด์ใดๆได้ "message": "Add [name] to fillable property to allow mass assignment on [App\\Models\\Product].",
+เนื่องจากเราไม่ได้กำนด property $fillable ใน model ว่าอนุญาตให้ทำการแก้ไขเปลี่ยนแปลงฟิวดใดได้บ้าง ดังนั้นเราต้องระบุฟิวด์ต่างๆที่ให้แก้ไขได้
