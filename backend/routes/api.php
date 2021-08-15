@@ -30,4 +30,7 @@ Route::get('/clear-cache', function() {
     ];
 });
 
-Route::resource('products', ProductController::class);
+
+Route::group(['middleware' => 'auth:sanctum'], function(){
+    return Route::resource('products', ProductController::class);
+});
