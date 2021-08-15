@@ -12,3 +12,13 @@ php artisan route:list --path=api --method=post
 
 #ทำการ migration ด้วยคำสั่ง php artisan migrate
 
+#การสร้าง model + migration + controller ด้วยคำสั่งเดียว เช่น จะสร้าง Product ก็รันคำสั่ง
+แบบยาว php artisan make:model --migration --controller Product --api
+แบบสั้น  php artisan make:model -mc Product --api
+laravel จะทำการสร้าง ไฟล์ให้เรา 3 ไฟล์ดังนี้
+- app\Http\Controllers\ProductController.php
+- app\Models\Product.php
+- database\migrations\2021_08_15_094227_create_products_table.php
+โดย --api จะสร้าง method ใน cotroller แค่ method 5 method ที่ใช้สำหรับ api เท่านั้น
+แต่ถ้าใส่ --resource แทน --api ก็จะสร้าง method ใน cotroller สำหรับ CRUD 7 method ในที่นี้เราทำ api เลยเลือก --api
+#
