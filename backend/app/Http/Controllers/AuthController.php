@@ -34,7 +34,7 @@ class AuthController extends Controller
         //Create Token
         // $token = $user->createToken('device-name','role')->planText();
         // device-name คือ ชื่ออุปกรณ์ที่ request เข้ามา ส่วน role คือ role ที่จะกำหนดให้ (ยังไม่ต้องใส่ ไปแก้ไขทีหลังหน้า adminเอา)
-        $token = $user->createToken('my-iphone')->plainTextToken;
+        $token = $user->createToken($request->userAgent())->plainTextToken;
 
         $response = [
             'user' => $user,
@@ -73,7 +73,7 @@ class AuthController extends Controller
             //Create Token
             // $token = $user->createToken('device-name','role')->planText();
             // device-name คือ ชื่ออุปกรณ์ที่ request เข้ามา ส่วน role คือ role ที่จะกำหนดให้ (ยังไม่ต้องใส่ ไปแก้ไขทีหลังหน้า adminเอา)
-            $token = $user->createToken('my-iphone')->plainTextToken;
+            $token = $user->createToken($request->userAgent())->plainTextToken;
 
             $response = [
                 'user' => $user,
