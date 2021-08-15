@@ -67,6 +67,9 @@ class AuthController extends Controller
                 ], 401);
             }
 
+            // ลบ token เก่าออก
+            $user->tokens()->delete();
+
             //Create Token
             // $token = $user->createToken('device-name','role')->planText();
             // device-name คือ ชื่ออุปกรณ์ที่ request เข้ามา ส่วน role คือ role ที่จะกำหนดให้ (ยังไม่ต้องใส่ ไปแก้ไขทีหลังหน้า adminเอา)
