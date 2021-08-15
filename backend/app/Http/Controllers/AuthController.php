@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-
+    private $defaultRole = 2 ;// 1=admin ,2=user
     //register
     public function register(Request $request)
     {
@@ -34,7 +34,7 @@ class AuthController extends Controller
         //Create Token
         // $token = $user->createToken('device-name','role')->planText();
         // device-name คือ ชื่ออุปกรณ์ที่ request เข้ามา ส่วน role คือ role ที่จะกำหนดให้ (ยังไม่ต้องใส่ ไปแก้ไขทีหลังหน้า adminเอา)
-        $token = $user->createToken($request->userAgent(), ["$user->role"])->plainTextToken;
+        $token = $user->createToken($request->userAgent(), ["$this->defaultRole"])->plainTextToken;
 
         $response = [
             'user' => $user,
