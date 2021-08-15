@@ -28,6 +28,16 @@ class ProductController extends Controller
     // POST      | api/products                | products.store
     public function store(Request $request)
     {
+        // เรียก user
+        $user = auth()->user();
+
+        if(!$user->tokenCan('1')) //ถ้า role = 1 (admin)
+        {
+            return response([
+                'message' => 'Permission denied for create!'
+            ], 401);
+        }
+
         $request->validate([
             'name' => 'required|min:5',
             'slug' => 'required',
@@ -59,6 +69,13 @@ class ProductController extends Controller
     // PUT|PATCH | api/products/{product}      | products.update
     public function update(Request $request, $id)
     {
+        $user = auth()->user();
+        if(!$user->tokenCan('1'))
+        {
+            return response([
+                'message' => 'Permission denied for update!'
+            ], 401);
+        }
         $product = Product::find($id);
         $product->update($request->all());
         return $product;
@@ -73,6 +90,13 @@ class ProductController extends Controller
     // DELETE    | api/products/{product}      | products.destroy
     public function destroy($id)
     {
+        $user = auth()->user();
+        if(!$user->tokenCan('1'))
+        {
+            return response([
+                'message' => 'Permission denied for update!'
+            ], 401);
+        }
         return Product::destroy($id);
     }
 }
