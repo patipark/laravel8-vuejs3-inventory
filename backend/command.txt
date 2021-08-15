@@ -1,0 +1,2 @@
+#สร้าง project laravel ด้วยคำสั่ง
+composer create-project  laravel/laravel backend --prefer-dist
