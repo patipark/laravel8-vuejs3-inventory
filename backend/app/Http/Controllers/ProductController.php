@@ -12,9 +12,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // GET|HEAD  | api/products                | products.index
     public function index()
     {
-        //
+        //read all products
+        return Product::all();
     }
 
     /**
@@ -23,9 +25,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // POST      | api/products                | products.store
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:5',
+            'slug' => 'required',
+            'price' => 'required',
+        ]);
+
+        return Product::create($request->all());
     }
 
     /**
@@ -34,9 +43,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    //GET|HEAD  | api/products/{product}      | products.show
+    public function show($id)
     {
-        //
+        return Product::find($id);
     }
 
     /**
@@ -46,9 +56,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    // PUT|PATCH | api/products/{product}      | products.update
+    public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->update($request->all());
+        return $product;
     }
 
     /**
@@ -57,8 +70,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    // DELETE    | api/products/{product}      | products.destroy
+    public function destroy($id)
     {
-        //
+        return Product::destroy($id);
     }
 }

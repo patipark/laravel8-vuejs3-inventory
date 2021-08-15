@@ -31,3 +31,5 @@ Schema::create('products', function (Blueprint $table) {
     $table->timestamps();
 });
 แล้วทำการ migration ดู php artisan migrate ดูจะเกิดตาราง products ขึ้นในฐานข้อมูลตามโครงสร้างที่กำหนดไว้ใน migration ไฟล์
+
+#ทำการแก้ไข ProductController ให้ทำงานตามหน้าที่ต่างๆของแต่ละ method
