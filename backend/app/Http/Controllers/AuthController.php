@@ -23,12 +23,12 @@ class AuthController extends Controller
         ]);
 
         $user = User::create([
-            'fullname'=> $fields['fullname'],
-            'username'=> $fields['username'],
-            'email'=> $fields['email'],
-            'password'=> bcrypt($fields['password']),
-            'tel'=> $fields['tel'],
-            'role'=> $fields['role']
+            'fullname' => $fields['fullname'],
+            'username' => $fields['username'],
+            'email' => $fields['email'],
+            'password' => bcrypt($fields['password']),
+            'tel' => $fields['tel'],
+            'role' => $fields['role']
         ]);
 
         //Create Token
@@ -37,9 +37,47 @@ class AuthController extends Controller
         $token = $user->createToken('my-iphone')->plainTextToken;
 
         $response = [
-            'user' => $user ,
-            'token' => $token ,
+            'user' => $user,
+            'token' => $token,
         ];
         return response($response, 201);
+    }
+
+    //Login
+    public function login(Request $request)
+    {
+        // Validate field
+        $fields = $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        $user = User::where([
+            'email' => $fields['email'],
+        ])->first();
+
+        if (!$user) {
+            return response([
+                'message' => 'Invalid credential!'
+            ], 401);
+        } else {
+            if (!Hash::check($fields['password'], $user->password)) {
+                return response([
+                    'message' => 'Password not match!'
+                ], 401);
+            }
+
+            //Create Token
+            // $token = $user->createToken('device-name','role')->planText();
+            // device-name คือ ชื่ออุปกรณ์ที่ request เข้ามา ส่วน role คือ role ที่จะกำหนดให้ (ยังไม่ต้องใส่ ไปแก้ไขทีหลังหน้า adminเอา)
+            $token = $user->createToken('my-iphone')->plainTextToken;
+
+            $response = [
+                'user' => $user,
+                'token' => $token,
+            ];
+            return response($response, 201);
+
+        }
     }
 }
