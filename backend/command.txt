@@ -58,3 +58,8 @@ Schema::create('products', function (Blueprint $table) {
 #ข้อมูลที่เข้าไปในฐานข้อมูลจะต่ำกว่าเวลาปกติไป 7 ชั่วโมง น่าจะเป็นเพราะ timezone
 # แก้ไขไฟล์ config\app.php ในส่วนของ timezone โดยแก้เป็น 'timezone' => 'Asia/Bangkok',
 # เพิ่ม TIME_ZONE =Asia/Bangkok ในไฟล์ .env ด้วย
+
+
+#การติดตั้ง larvel/sanctum ด้วยคำสั่ง composer require laravel/sanctum
+#เสร็จแล้วให้ทำการ Publish the Sanctum configuration and migration files
+ ด้วยการเรียกคำสั่ง php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
