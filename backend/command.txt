@@ -67,3 +67,6 @@ Schema::create('products', function (Blueprint $table) {
 #จะเกิดไฟล์ config\sanctum.php และไฟล์ database\migrations\2019_12_14_000001_create_personal_access_tokens_table.php
 ซึ่งเป็นการสร้าง personal
 
+#run คำสั่งสร้าง AuthController ==> php artisan make:controller AuthController --model=User
+
+
