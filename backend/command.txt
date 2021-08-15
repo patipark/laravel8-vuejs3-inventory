@@ -21,4 +21,13 @@ laravel จะทำการสร้าง ไฟล์ให้เรา 3 �
 - database\migrations\2021_08_15_094227_create_products_table.php
 โดย --api จะสร้าง method ใน cotroller แค่ method 5 method ที่ใช้สำหรับ api เท่านั้น
 แต่ถ้าใส่ --resource แทน --api ก็จะสร้าง method ใน cotroller สำหรับ CRUD 7 method ในที่นี้เราทำ api เลยเลือก --api
-#
+# แก้ไขโครงสร้างไฟล์ migration 2021_08_15_094227_create_products_table.php
+Schema::create('products', function (Blueprint $table) {
+    $table->increments('id');
+    $table->string('name');
+    $table->string('slug');
+    $table->string('description')->nullable();
+    $table->decimal('price',9, 2); // 2,859,893.50
+    $table->timestamps();
+});
+แล้วทำการ migration ดู php artisan migrate ดูจะเกิดตาราง products ขึ้นในฐานข้อมูลตามโครงสร้างที่กำหนดไว้ใน migration ไฟล์
