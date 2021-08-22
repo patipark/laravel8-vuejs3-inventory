@@ -3,7 +3,7 @@
         
         <nav class="container flex flex-wrap items-center px-4 mx-auto">
             <a href="#">
-                <img src="images/logo-main.png" alt="logo" class="w-40">
+                <img src="@/assets/img/logo-main.png" alt="logo" class="w-40">
             </a>
             <button @click="menuOpen=true" class="px-3 py-2 ml-auto text-indigo-900 border-2 border-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white lg:hidden">
                 <span class="block w-6 my-1 border-b-2 border-current"></span>
