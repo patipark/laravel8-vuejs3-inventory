@@ -23,14 +23,14 @@
         </nav>
 
         <!-- Mobile Menu -->
-        <div x-show="menuOpen" class="absolute inset-x-0 top-0 p-2 transition origin-top transform md:hidden">
+        <div class="absolute inset-x-0 top-0 p-2 transition origin-top transform md:hidden">
             <div class="overflow-hidden bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5">
               <div class="flex items-center justify-between px-5 pt-4">
                 <div>
-                  <img class="w-auto h-8" src="images/logo-main.png" alt="Achieve your life dream">
+                  <img class="w-auto h-8" src="@/assets/img/logo-main.png" alt="Achieve your life dream">
                 </div>
                 <div class="-mr-2">
-                  <button @click="menuOpen = false" type="button" class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+                  <button type="button" class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
                     <span class="sr-only">Close menu</span>
                     <!-- Heroicon name: outline/x -->
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
