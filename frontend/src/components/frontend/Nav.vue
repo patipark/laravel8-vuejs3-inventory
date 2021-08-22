@@ -2,29 +2,29 @@
      <header class="fixed w-full py-4 bg-white shadow-md">
         
         <nav class="container flex flex-wrap items-center px-4 mx-auto">
-            <a href="#">
+            <router-link to="/">
                 <img src="@/assets/img/logo-main.png" alt="logo" class="w-40">
-            </a>
+            </router-link>
             <button @click="menuOpen=true" class="px-3 py-2 ml-auto text-indigo-900 border-2 border-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white lg:hidden">
                 <span class="block w-6 my-1 border-b-2 border-current"></span>
                 <span class="block w-6 my-1 border-b-2 border-current"></span>
                 <span class="block w-6 my-1 border-b-2 border-current"></span>
             </button>
             <div class="hidden w-full ml-auto lg:block lg:w-auto">
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">หน้าหลัก</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">เกี่ยวกับเรา</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">ผลงาน</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">บริการ</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">ติดต่อเรา</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">สมัครสมาชิก</a>
+                <router-link to="/" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">หน้าหลัก</router-link>
+                <router-link to="/about" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">เกี่ยวกับเรา</router-link>
+                <router-link to="/portfolio" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">ผลงาน</router-link>
+                <router-link to="/service" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">บริการ</router-link>
+                <router-link to="/contact" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">ติดต่อเรา</router-link>
+                <router-link to="/register" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">สมัครสมาชิก</router-link>
                 <div class="inline-block px-4 py-2">
-                    <a href="#" class="inline-block px-6 py-2 text-white bg-indigo-600 border-2 border-indigo-600 rounded-md hover:text-indigo-600 hover:bg-indigo-100">เข้าสู่ระบบ</a>
+                    <router-link to="/login" class="inline-block px-6 py-2 text-white bg-indigo-600 border-2 border-indigo-600 rounded-md hover:text-indigo-600 hover:bg-indigo-100">เข้าสู่ระบบ</router-link>
                 </div>
             </div>
         </nav>
 
         <!-- Mobile Menu -->
-        <div class="้hidden absolute inset-x-0 top-0 p-2 transition origin-top transform md:hidden">
+        <div class="absolute inset-x-0 top-0 p-2 transition origin-top transform md:hidden">
             <div class="overflow-hidden bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5">
               <div class="flex items-center justify-between px-5 pt-4">
                 <div>
@@ -43,12 +43,12 @@
               <div class="pt-5 pb-6" role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
 
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                  <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">หน้าหลัก</a>
-                  <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">เกี่ยวกับเรา</a>
-                  <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">ผลงาน</a>
-                  <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">บริการ</a>
-                  <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">ติดต่อเรา</a>
-                  <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">สมัครสมาชิก</a>
+                  <router-link to="/" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">หน้าหลัก</router-link>
+                  <router-link to="/about" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">เกี่ยวกับเรา</router-link>
+                  <router-link to="/portfolio" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">ผลงาน</router-link>
+                  <router-link to="/service" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">บริการ</router-link>
+                  <router-link to="/contact" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">ติดต่อเรา</router-link>
+                  <router-link to="/register" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">สมัครสมาชิก</router-link>
                 </div>
 
               </div>
