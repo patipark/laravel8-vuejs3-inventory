@@ -1,5 +1,5 @@
 <template>
-     <header class="fixed w-full py-4 bg-white shadow-md" x-data="{menuOpen: false}">
+     <header class="fixed w-full py-4 bg-white shadow-md">
         
         <nav class="container flex flex-wrap items-center px-4 mx-auto">
             <a href="#">
@@ -11,19 +11,20 @@
                 <span class="block w-6 my-1 border-b-2 border-current"></span>
             </button>
             <div class="hidden w-full ml-auto lg:block lg:w-auto">
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">Home</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">About</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">Work</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">Service</a>
-                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">Blog</a>
+                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">หน้าหลัก</a>
+                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">เกี่ยวกับเรา</a>
+                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">ผลงาน</a>
+                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">บริการ</a>
+                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">ติดต่อเรา</a>
+                <a href="#" class="block px-4 py-2 font-medium hover:text-indigo-900 lg:inline-block">สมัครสมาชิก</a>
                 <div class="inline-block px-4 py-2">
-                    <a href="#" class="inline-block px-6 py-2 text-white bg-indigo-600 border-2 border-indigo-600 rounded-md hover:text-indigo-600 hover:bg-indigo-100">Contact Now</a>
+                    <a href="#" class="inline-block px-6 py-2 text-white bg-indigo-600 border-2 border-indigo-600 rounded-md hover:text-indigo-600 hover:bg-indigo-100">เข้าสู่ระบบ</a>
                 </div>
             </div>
         </nav>
 
         <!-- Mobile Menu -->
-        <div class="absolute inset-x-0 top-0 p-2 transition origin-top transform md:hidden">
+        <div class="้hidden absolute inset-x-0 top-0 p-2 transition origin-top transform md:hidden">
             <div class="overflow-hidden bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5">
               <div class="flex items-center justify-between px-5 pt-4">
                 <div>
