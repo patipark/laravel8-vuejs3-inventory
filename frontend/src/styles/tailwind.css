@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
+
 /*https://tailwindcss.com/docs/guides/vue-3-vite*/
 @tailwind base;
 @tailwind components;
