@@ -26,7 +26,11 @@ const routes = [
         path: '',
         component: Home
       }
-    ]
+    ],
+    meta: {
+      title: 'หน้าหลัก',
+      description: 'หน้าหลักระบบคงคลังสินค้า'
+    }
   },
   {
     path: '/about',
@@ -37,7 +41,11 @@ const routes = [
         path: '',
         component: About
       }
-    ]
+    ],
+    meta: {
+      title: 'เกี่ยวกับเรา',
+      description: 'รายละเอียดหน้าเกี่ยวกับเรา'
+    }
   },
   {
     path: '/portfolio',
@@ -48,7 +56,11 @@ const routes = [
         path: '',
         component: Portfolio
       }
-    ]
+    ],
+    meta: {
+      title: 'ผลงานของเรา',
+      description: 'รายละเอียดหน้าผลงานของเรา'
+    }
   },
   {
     path: '/service',
@@ -59,7 +71,11 @@ const routes = [
         path: '',
         component: Service
       }
-    ]
+    ],
+    meta: {
+      title: 'บริการของเรา',
+      description: 'รายละเอียดหน้าบริการของเรา'
+    }
   },
   {
     path: '/contact',
@@ -70,7 +86,11 @@ const routes = [
         path: '',
         component: Contact
       }
-    ]
+    ],
+    meta: {
+      title: 'ติดต่อเรา',
+      description: 'รายละเอียดหน้าติดต่อเรา'
+    }
   },
   {
     path: '/register',
@@ -81,7 +101,11 @@ const routes = [
         path: '',
         component: Register
       }
-    ]
+    ],
+    meta: {
+      title: 'สมัครสมาชิกใหม่',
+      description: 'รายละเอียดสมัครสมาชิกใหม่'
+    }
   },
   {
     path: '/login',
@@ -92,7 +116,11 @@ const routes = [
         path: '',
         component: Login
       }
-    ]
+    ],
+    meta: {
+      title: 'เข้าสู่ระบบ',
+      description: 'รายละเอียดหน้าเข้าสู่ระบบ'
+    }
   },
   {
     path: '/forgotpassword',
@@ -103,13 +131,21 @@ const routes = [
         path: '',
         component: ForgotPassword
       }
-    ]
+    ],
+    meta: {
+      title: 'ลืมรหัสผ่าน',
+      description: 'รายละเอียดหน้าลืมรหัสผ่าน'
+    }
   },
 
   // Error 404
   {
     path: "/:catchAll(.*)",
     component: NotFound404,
+    meta: {
+      title: '404 ไม่พบหน้านี้',
+      description: 'รายละเอียดหน้า 404'
+    }
   }
 
 ]
