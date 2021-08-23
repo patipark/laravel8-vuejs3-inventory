@@ -80,3 +80,80 @@
       </div>
     </div>
 </template>
+
+<script>
+
+import useValidate from '@vuelidate/core'
+import { required, email, minLength, helpers } from '@vuelidate/validators';
+
+import http from '@/services/AuthService'
+
+export default {
+
+  data(){
+    return {
+      v$: useValidate(),
+      email: '',
+      password: ''
+    }
+  },
+
+  methods:{
+    submitForm(){
+      // alert(id)
+      this.v$.$validate(); // checks all input
+      if(!this.v$.$error){
+        // ถ้า validate ผ่านแล้ว
+        // alert('Form validate Success')
+        // เรียกใช้งาน API Login จาก Laravel
+
+        http.post('login',
+          {
+            "email": this.email,
+            "password": this.password
+          }
+        ).then(response => {
+
+          console.log(response.data)
+
+          // เก็บข้อมูล user ลง localStorage
+          localStorage.setItem('user', JSON.stringify(response.data))
+
+          // เมื่อล็อกอินผ่านส่งไปหน้า dashboard
+          this.$router.push('backend')
+
+        }).catch(error => {
+          if (error.response) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          }
+        })
+
+
+      }else{
+        alert('Form validate failed!');
+      }
+    }
+  },
+
+  validations() {
+    return {
+      email: { 
+        required: helpers.withMessage('ป้อนอีเมล์ก่อน', required),
+        email: helpers.withMessage('รูปแบบอีเมล์ที่ป้อนไม่ถูกต้อง', email),
+      } ,
+      password: { 
+        required: helpers.withMessage('ป้อนรหัสผ่านก่อน', required), 
+        minLength : helpers.withMessage(
+          ({
+            $params
+          }) => `รหัสผ่านต้องไม่น้อยกว่า ${$params.min} ตัวอักษร`, 
+          minLength(4)
+        )
+      }
+    }
+  },
+  
+}
+</script>
